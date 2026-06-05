@@ -95,8 +95,7 @@ bash ProteinMPNN/run_pplu_2G6X_chainB_scoring.sh
 注意：
 
 - 你需要自行准备对应的 PDB 文件
-- 你需要自行下载 ProteinMPNN 的模型权重
-- 由于版权或分发限制，这里不直接提供对应预训练权重
+
 
 ## Step 6. 用 Venus-MAXWELL 打分
 
