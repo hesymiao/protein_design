@@ -1,0 +1,24 @@
+# ===== 核心依赖 =====
+torch>=1.12.0
+numpy>=1.21.0
+pandas>=1.3.5
+
+# ===== SPURS 模型加载 =====
+omegaconf>=2.1.0
+hydra-core>=1.2.0
+biopython>=1.79
+einops>=0.6.1
+fairscale>=0.4.6
+
+# ===== ESM2 (Facebook fair-esm) =====
+# 注意: 必须从 Facebook CDN 下载原生 checkpoint，HuggingFace 镜像格式不兼容
+# 模型会自动下载到 ~/.cache/torch/hub/checkpoints/
+# 如果下载失败，手动: wget https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t33_650M_UR50D.pt
+git+https://github.com/facebookresearch/esm.git
+
+# ===== 数据处理 =====
+openpyxl>=3.0.0    # 读取 GFP_data.xlsx
+
+# ===== 可选：ESM2 LoRA 亮度预测训练 =====
+# scikit-learn>=1.0.0    # Spearman 评估
+# transformers>=4.30.0   # HuggingFace ESM tokenizer (仅 train_brightness.py 需要)
