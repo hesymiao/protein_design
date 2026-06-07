@@ -6,7 +6,8 @@
 2. 训练 5-fold 亮度预测模型
 3. 用 steer-PLM 生成高亮度候选序列
 4. 用 ProteinMPNN 做结构一致性打分
-5. 用 Venus-MAXWELL 做进一步打分
+5. 用 Venus-MAXWELL 打分
+6. 用 spurs 打分
 
 ## Step 1. 启动环境
 
@@ -111,9 +112,20 @@ bash Venus-MAXWELL/run_pplu_2G6X_chainB_scoring.sh
 
 注意：
 
-- 需要你自行从 Venus-MAXWELL 原论文或官方提供地址下载模型
+- 由于版权问题，需要你自行从 Venus-MAXWELL 原论文或官方提供地址下载模型
 - 这里同样不直接附带模型权重
 
+## Step 7. spurs 打分
+运行：
+
+```bash
+python "./code/mini_spurs_code/scripts/run_pplu_2G6X_chainB_scoring.py"
+```
+
+注意：
+
+- 由于版权问题，需要你自行从  spurs 原论文或官方提供地址下载模型
+- 这里同样不直接附带模型权重
 ## 最终产物
 
 整个流程结束后，你会得到：
@@ -122,5 +134,6 @@ bash Venus-MAXWELL/run_pplu_2G6X_chainB_scoring.sh
 - 一批 steer-PLM 生成的候选序列
 - ProteinMPNN 打分结果
 - Venus-MAXWELL 打分结果
+- spurs 打分结果
 
 你可以综合亮度预测分数、ProteinMPNN 分数和 Venus-MAXWELL 分数，筛选最终用于实验验证的序列。
